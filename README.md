@@ -1,9 +1,6 @@
 # DataWarehouse with RDS PostgreSQL and Redshift
 
-This module creates a private Redshift cluster and RDS PostgreSQL instance only reachable from a bastion host. This module
-The default VPC is used as main infrastructure and this module
-It doesn't create either additional VPCs therefore it requires to define the proper `vpc_id` and `subnet_id` to integrate it with your current infrastructure.
-The security groups have been configured in order to access to PostgreSQL and RedShift via SSH tunneling from your own laptop.
+This module creates a private Redshift cluster and RDS PostgreSQL instance only reachable from a bastion host. It doesn't create either additional VPCs therefore it requires to define the proper `vpc_id` and `subnet_id` to integrate it with your current infrastructure. The security groups have been configured in order to access to PostgreSQL and RedShift via SSH tunneling from your own laptop.
 
 
 ## Variables:
