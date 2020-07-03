@@ -1,8 +1,9 @@
 # DataWarehouse with RDS PostgreSQL and Redshift
 
-This module creates a private Redshift cluster and RDS PostgreSQL instance only reachable from a bastion host.
-The default VPC is used as main infrastructure and this module doesn't create either additional VPCs or subnets.
-SSH tunneling should be used to reach the RDS and Redshift cluster.
+This module creates a private Redshift cluster and RDS PostgreSQL instance only reachable from a bastion host. This module
+The default VPC is used as main infrastructure and this module
+It doesn't create either additional VPCs therefore it requires to define the proper `vpc_id` and `subnet_id` to integrate it with your current infrastructure.
+The security groups have been configured in order to access to PostgreSQL and RedShift via SSH tunneling from your own laptop.
 
 
 ## Variables:
@@ -20,9 +21,9 @@ SSH tunneling should be used to reach the RDS and Redshift cluster.
 | generic_kms | Id of the KMS | string |
 | project | Name of my project :-) | string |
 | rds_allocated_storage | The aws region | string |
-| rds_instance_class | The aws region | string |
-| rds_max_allocated_storage | The aws region | string |
-| rds_storage_type | The aws region | string |
+| rds_instance_class | The instance type of the RDS instance. | string |
+| rds_max_allocated_storage | The upper limit to which Amazon RDS can automatically scale the storage of the DB instance.| string |
+| rds_storage_type | The storage type used | string |
 | redshift_cluster_type | The cluster type to use. Either single-node or multi-node. | string |
 | redshift_node_type | The type of nodes in the cluster | string |
 | redshift_nodes | The number of the nodes in the cluster | string |
